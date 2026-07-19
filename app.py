@@ -1,8 +1,10 @@
 import streamlit as st
 import urllib.request
 import urllib.parse
+import urllib.error
 import json
 import pandas as pd
+import os
 
 st.set_page_config(page_title="MINDY 16 - UNIFIED CONSOLE", layout="centered")
 
@@ -23,7 +25,7 @@ with st.sidebar:
         "SELECT ACTIVE MODULE:",
         ["1. Constitutional Logic Gates", "2. Working-Class Economic Impact", "3. Political Target Matrix"]
     )
-    st.markdown("---")
+st.markdown("---")
     st.caption("MINDY 16 // MULTI-MODULE DEPLOYMENT // PROXY PORT 18408")
 
 # =========================================================
@@ -44,9 +46,10 @@ elif active_console == "3. Political Target Matrix":
     st.title("🎯 POLITICAL TARGET MATRIX")
     st.caption("LIVE DATA FEED & BIG INDUSTRY INFLUENCE ESTIMATOR")
 
-    st.markdown("### 🔑 THE FEDERAL MASTER KEY")
-    st.write("Paste your `data.gov` API key to unlock the FEC vault and run the probability scan.")
-    fec_api_key = st.text_input("Enter Data.gov API Key:", type="password")
+      st.markdown("### 🔑 THE FEDERAL MASTER KEY")
+    st.write("Secure API key loaded from Render environment.")
+    fec_api_key = os.getenv("FEC_API_KEY")
+  
 
     st.markdown("---")
     st.markdown("### 📡 PULLING BASE TARGETS (RENDER ENGINE)")
