@@ -24,9 +24,9 @@ with st.sidebar:
     active_console = st.radio(
         "SELECT ACTIVE MODULE:",
         ["1. Constitutional Logic Gates", "2. Working-Class Economic Impact", "3. Political Target Matrix"]
-    )
+   )
 st.markdown("---")
-    st.caption("MINDY 16 // MULTI-MODULE DEPLOYMENT // PROXY PORT 18408")
+st.caption("MINDY 16 // MULTI-MODULE DEPLOYMENT // PROXY PORT 18408")
 
 # =========================================================
 # MODULE 1 & 2: INERT FOR API TESTING
